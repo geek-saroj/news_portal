@@ -155,7 +155,7 @@ function Nav1({ position, color }: any) {
           <div className="w-[115px] h-[63px]  ">
             <Link href="/">
               <img
-                src="/../assets/sunrise-logo.png"
+                src="/../assets/logo.png"
                 alt="logo"
                 className="w-full h-full object-contain"
               />
@@ -178,7 +178,7 @@ function Nav1({ position, color }: any) {
             <Link href="/">
               {" "}
               <img
-                src="/../assets/sunrise-png-logo _w.png"
+                src="/logo.png"
                 alt="logo"
                 className="w-full h-full object-contain"
               />

@@ -1,31 +1,47 @@
-import React from "react";
-import Link from "next/link";
-import { MdOutlineNavigateNext } from "react-icons/md";
+import React from 'react'
 
-const Ministries = () => {
+function Test() {
   return (
-    <div className="bg-slate-900">
-     <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px] h-[550px] lg:h-[400px] md:px-0 containerindustries-work">
-      <div className="flex items-center justify-center gap-1 md:gap-2  flex-col   ">
-        <h1 className="text-[20px] md:text-[34px]  font-4xl font-extrabold leading-[42.19px] font-poppin text-center text-white pt-20 ">
-        BOOK A FREE CONSULTATION WITH OUR <br /> EXPERT
-        </h1>
-        <h4 className="text-sm lg:text-base   text-center  py-3 pb-5 text-white ">
-        Let’s discuss your project with our expert and let us know your project idea to turn it into amazing digital product.
-        </h4>
-       
-        <div className="flex items-center md:justify-center mt-5 p-9 lg:p-8 ">
-          <Link
-            href=""
-            className="flex gap-2 items-center border-[2px] lg:border-solid text-white bg -[#174CCF] px-4 lg:px-[80px] py-2 border-white group rounded-3xl hover:bg-[#00d07e]"
-          >
-            BOOK A FREE CONSULTATION NOW! <MdOutlineNavigateNext size={30} className="" />
-          </Link>
+    <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px]  md:px-0 py-20">
+      <div className='flex flex-col lg:flex-row lg:gap-[40px] ' >
+        <div className="basis-[80%] ">
+          <div className="flex ">
+            <div className="basis-[70%] flex-col lg:flex-row">
+              <img src="https://media.istockphoto.com/id/637696304/photo/patan.jpg?s=612x612&w=0&k=20&c=-53aSTGBGoOOqX5aoC3Hs1jhZ527v3Id_xOawHHVPpg=" alt="" className='w-full h-auto' />
+
+              <h1>
+
+                जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
+              </h1>
+              <div className="basis-[30%]">
+                <div className="flex flex-col lg:flex-row">
+                <div className=" ">
+
+                  <img src="https://media.istockphoto.com/id/1291366083/photo/buddhist-monastery-in-himalayas-mountain-tengboche-nepal.jpg?s=612x612&w=0&k=20&c=yDz4qJnnkFc2no-kiTZOMWdBy5q7C1pq493oJFNtrl4=" alt="" className='w-[80px] h-[60px] ' />
+                  <h1>
+                    जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
+                  </h1>
+                </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="basis-[20%]  ">
+          <div className="flex items-center justify-center">
+
+            <img src="https://media.istockphoto.com/id/1291366083/photo/buddhist-monastery-in-himalayas-mountain-tengboche-nepal.jpg?s=612x612&w=0&k=20&c=yDz4qJnnkFc2no-kiTZOMWdBy5q7C1pq493oJFNtrl4=" alt="" className='w-[80px] h-[60px] ' />
+            <h1>
+              जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
+            </h1>
+          </div>
+
+        </div>
+
       </div>
     </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Ministries;
+export default Test

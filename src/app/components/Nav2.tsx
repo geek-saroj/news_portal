@@ -76,7 +76,7 @@ function Nav1({ home }: any) {
           <div className="w-[153px] h-auto ">
             <Link href="/">
               <img
-                src="/../assets/test.jpg"
+                src="/../assets/logo.png"
                 alt="avatar"
                 className="w-20 h-20 object-contain"
               />
@@ -95,10 +95,10 @@ function Nav1({ home }: any) {
               fix ? "" : "pt-8 "
             } `}
           >
-            <div className="w-[182px] h-[108px]">
+            <div className="w-[150px] h-[60px]">
               <Link href="/">
                 <img
-                  src="/../assets/logo-small.png"
+                  src="/../assets/logo.png"
                   alt="avatar"
                   className={`${
                     fix ? "bottom-[14px]" : "bottom-[36px]"
@@ -108,7 +108,7 @@ function Nav1({ home }: any) {
             </div>
             <div className="">
               <ul
-                className={`flex flex-row items-center font-[inter] gap-[32px] font-normal text-[14px] uppercase leading-[14.52px]  ${
+                className={`flex flex-row items-center font-[inter] gap-[32px] font-normal text-[18px] uppercase leading-[14.52px]  ${
                   fix ? "mt-6" : ""
                 }`}
               >
