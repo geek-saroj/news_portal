@@ -48,7 +48,7 @@ function Midcontainer() {
                             )}
 
 
-                        </div>
+                        </div>  
                         <div className="basis-[25%]">
                             {polularnews && polularnews.map((item: any) =>
 

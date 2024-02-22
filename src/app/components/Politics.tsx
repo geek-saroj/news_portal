@@ -14,14 +14,14 @@ function Test() {
                 जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
               </h1>
               <div className="basis-[30%]">
-                <div className="flex flex-col lg:flex-row">
-                <div className=" ">
+                <div className="flex gap-4 items-center">
+                
 
                   <img src="https://media.istockphoto.com/id/1291366083/photo/buddhist-monastery-in-himalayas-mountain-tengboche-nepal.jpg?s=612x612&w=0&k=20&c=yDz4qJnnkFc2no-kiTZOMWdBy5q7C1pq493oJFNtrl4=" alt="" className='w-[80px] h-[60px] ' />
                   <h1>
                     जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
                   </h1>
-                </div>
+                
                 </div>
 
               </div>
@@ -29,7 +29,7 @@ function Test() {
           </div>
         </div>
         <div className="basis-[20%]  ">
-          <div className="flex items-center justify-center">
+          <div className="flex gap-4 items-center">
 
             <img src="https://media.istockphoto.com/id/1291366083/photo/buddhist-monastery-in-himalayas-mountain-tengboche-nepal.jpg?s=612x612&w=0&k=20&c=yDz4qJnnkFc2no-kiTZOMWdBy5q7C1pq493oJFNtrl4=" alt="" className='w-[80px] h-[60px] ' />
             <h1>
