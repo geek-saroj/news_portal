@@ -1,47 +1,100 @@
-import React from 'react'
+"use client"
+import { BaseUrl } from "../api/global";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { imageUrl } from "../utils/imageUrl";
+import Link from "next/link";
 
-function Test() {
+function Grid_helth_poli() {
+
+  const [edication, seteducation] = useState<any>(null);
+  const [helth, selhelth] = useState<any>(null);
+  const [crime, setcrime] = useState<any>(null);
+
+
+
+
+  useEffect(() => {
+    let getCategory = async () => {
+      let response = await axios.get(`${BaseUrl}/news?populate=*&filters[isEducation][$eq]=true&sort[0]=id:desc&pagination[limit]=3 `);
+      let response1 = await axios.get(`${BaseUrl}/news?populate=*&filters[IsHelth][$eq]=true&sort[0]=id:desc&pagination[limit]=3`);
+      let response2 = await axios.get(`${BaseUrl}/news?populate=*&filters[isCrime][$eq]=true&sort[0]=id:desc&pagination[limit]=3`);
+
+
+
+
+      seteducation(response?.data.data);
+      selhelth(response1?.data.data);
+      setcrime(response2?.data.data);
+
+
+    };
+    getCategory();
+  }, []);
   return (
-    <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px]  md:px-0 py-20">
-      <div className='flex flex-col lg:flex-row lg:gap-[40px] ' >
-        <div className="basis-[80%] ">
-          <div className="flex ">
-            <div className="basis-[70%] flex-col lg:flex-row">
-              <img src="https://media.istockphoto.com/id/637696304/photo/patan.jpg?s=612x612&w=0&k=20&c=-53aSTGBGoOOqX5aoC3Hs1jhZ527v3Id_xOawHHVPpg=" alt="" className='w-full h-auto' />
-
-              <h1>
-
-                जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
-              </h1>
-              <div className="basis-[30%]">
-                <div className="flex gap-4 items-center">
-                
-
-                  <img src="https://media.istockphoto.com/id/1291366083/photo/buddhist-monastery-in-himalayas-mountain-tengboche-nepal.jpg?s=612x612&w=0&k=20&c=yDz4qJnnkFc2no-kiTZOMWdBy5q7C1pq493oJFNtrl4=" alt="" className='w-[80px] h-[60px] ' />
-                  <h1>
-                    जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
-                  </h1>
-                
+    <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px]  md:px-0">
+      <div className="flex flex-col lg:flex-row gap-6">
+        <div className="basis-1/2">
+          <h1 className="text-[30px] font-bold">प्रदेश समाचार</h1>
+          <div className="w-[150px] h-1 bg-blue-700  items-start"></div>
+          <div className="pt-5">
+            {edication && edication.map((item: any, index: number) => (
+              <div key={item.id} className={`justify-center items-center${index === 0 ? "basis-2/3" : "basis-1/3 pt-3"}`}>
+                <div className="">
+                  {index === 0 ? (
+                    <div >
+                      <h1 className='text-[18px] w-full h-[40px] font-bold'>{item?.attributes?.title}</h1>
+                      <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className="w-full h-[400px]" />
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="flex gap-4 items-center pt-3">
+                        <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
+                        <h1>{item?.attributes?.title}</h1>
+                      </div>
+                    </div>
+                  )}
                 </div>
-
               </div>
-            </div>
+            ))}
           </div>
         </div>
-        <div className="basis-[20%]  ">
-          <div className="flex gap-4 items-center">
 
-            <img src="https://media.istockphoto.com/id/1291366083/photo/buddhist-monastery-in-himalayas-mountain-tengboche-nepal.jpg?s=612x612&w=0&k=20&c=yDz4qJnnkFc2no-kiTZOMWdBy5q7C1pq493oJFNtrl4=" alt="" className='w-[80px] h-[60px] ' />
-            <h1>
-              जाजरकोट भुकम्पमा परेकोहरुको उद्दार गर्दै सशस्त्र प्रहरी
-            </h1>
+
+
+
+       
+        <div className="basis-1/2">
+          <h1 className="text-[30px] font-bold ">अन्तराष्ट्रिय</h1>
+          <div className="w-[150px] h-1 bg-blue-700  items-start"></div>
+          <div className="pt-5">
+
+            {crime && crime.map((item: any, index: number) => (
+              <div key={item.id} className={`justify-center items-center${index === 0 ? "basis-2/3" : "basis-1/3 "}`}>
+                <div className="">
+                  {index === 0 ? (
+                    <div >
+                      <h1 className='text-[18px] w-full h-[40px] font-bold'>{item?.attributes?.title}</h1>
+                      <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className="w-full h-[400px]" />
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="flex gap-4 items-center pt-6">
+                        <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
+                        <h1>{item?.attributes?.title}</h1>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
-
         </div>
-
       </div>
+
+
     </div>
   )
 }
 
-export default Test
+export default Grid_helth_poli

@@ -83,7 +83,7 @@ function Dramenu({ categories }: any) {
   };
   return (
     <>
-      <FaBars fontSize={25} onClick={showDrawer} className="baricons" />
+      <FaBars fontSize={25} onClick={showDrawer} className="baricons text-[#ffffff]" />
       <Drawer placement="right" onClose={onClose} open={open}>
         <ul className="flex flex-col items-start pl-[0px] justify-start gap-[25px] font-[inter] font-normal text-[16px] leading-[14.52px] text-[#000000]">
           <li className="text-start">

@@ -12,19 +12,19 @@ const page=()=> {
     const {id} = useParams()
     // const router = useRouter()
     // const  id  = router.query.id;
-    // console.log("id is",id)
+    console.log("id is",id)
         useEffect(() => {
             let getCategory = async () => {
                 let response = await axios.get(`${BaseUrl}/pradesh-banners/${id}?populate=*`);
-                let response1 = await axios.get(`${BaseUrl}/pradesh-news?populate=*`);
+                // let response1 = await axios.get(`${BaseUrl}/pradesh-news?populate=*`);
     
                 setpradesh(response?.data.data);
-                setpradeshnews(response1?.data.data);
+                // setpradeshnews(response1?.data.data);
             };
             getCategory();
         }, [id]);
         
-  console.log("pradeshnews is",pradeshnews)
+  console.log("pradeshnews is",pradesh)
   return (
     <div>
          <h1 className="text-[#000000] font-bold text-3xl font-poppin lg:text-5xl text-center py-8">
@@ -43,7 +43,7 @@ const page=()=> {
                 />
                 <div className="absolute top-1/4 left-[60%] w-100 h-150 hidden lg:block bg-[#F6F6F6] shadow-md transform -translate-x-1/2">
                     <p className="p-6">
-                        {pradesh?.attributes?.discription} {/* Assuming title is a field in your data */}
+                        {pradesh?.attributes?.description?.[0].children[0].text} {/* Assuming title is a field in your data */}
                     </p>
                 </div>
             </div>

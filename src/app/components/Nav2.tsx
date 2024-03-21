@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Dramenu from "./Dramenu";
@@ -25,13 +25,13 @@ function Nav1({ home }: any) {
   }, []);
 
   //filtering main category
-//   console.log("categories are",categories)
+  //   console.log("categories are",categories)
 
   let mainCategory = categories?.filter(
     (item: any, index: number) => item.attributes.menu.data === null
   );
 
-//   console.log("mainCategory is ",mainCategory)
+  //   console.log("mainCategory is ",mainCategory)
 
   // filtering sub category
   // let secondCategory: any[] = [];
@@ -53,8 +53,6 @@ function Nav1({ home }: any) {
   };
 
   return (
-
-      
     //   {/* <div>
     //         {/* Render your filtered categories here */}
     //         {categories.map((category:any, index:number) => (
@@ -85,89 +83,107 @@ function Nav1({ home }: any) {
           <Dramenu categories={categories} />
         </div>
       </div>
+      <div className="div">
+        <div className="hidden lg:block w-full h-[120px]  max-w-[1180px] mx-auto py-2">
+          <div className="w-[400px] h-full justify-start">
+            <Link href="/">
+            <img
+              src="https://janakpurnews.com/wp-content/uploads/2024/02/janakpur-news-logo-final-2-e1709132581419.png"
+              alt=""
+              className="w-full h-full"
+            />
+            </Link>
+          </div>
+        </div>
+        <div
+          className={` ${
+            home ? "fixed top-0" : ""
+          }  bg-[#1E60B7] z-50 w-full h-14`}
+        >
+          <div className="   h-[80px]  max-w-[1180px] mx-auto items-start justify-start lg:block hidden    ">
+            <div
+              className={` items-start justify-start font-semibold  py-[10px] lg:flex lg:flex-row ${
+                fix ? "" : "pt-6 "
+              } `}
+            >
+              {/* <div className="w-[150px] h-[60px]">
+                <Link href="/">
+                  <img
+                    src="/../assets/logo.png"
+                    alt="avatar"
+                    className={`${
+                      fix ? "bottom-[14px]" : "bottom-[36px]"
+                    } relative lg:left-[9px] xl:left-[-8px] 2xl:right-0 w-[108px] h-full object-contain`}
+                  />
+                </Link>
+              </div> */}
+              <div className="pr-4 cursor-pointer w-[150px]  ">
 
-      <div
-        className={` ${home ? "fixed top-0" : ""}  bg-[#1e2250c0] z-50 w-full`}
-      >
-        <div className="   h-[80px]  max-w-[1180px] mx-auto lg:block hidden    ">
-          <div
-            className={`justify-between font-semibold  py-[10px] lg:flex lg:flex-row ${
-              fix ? "" : "pt-8 "
-            } `}
-          >
-            <div className="w-[150px] h-[60px]">
-              <Link href="/">
-                <img
-                  src="/../assets/logo.png"
-                  alt="avatar"
-                  className={`${
-                    fix ? "bottom-[14px]" : "bottom-[36px]"
-                  } relative lg:left-[9px] xl:left-[-8px] 2xl:right-0 w-[108px] h-full object-contain`}
-                />
-              </Link>
-            </div>
-            <div className="">
-              <ul
-                className={`flex flex-row items-center font-[inter] gap-[32px] font-normal text-[18px] uppercase leading-[14.52px]  ${
-                  fix ? "mt-6" : ""
-                }`}
-              >
-                {mainCategory?.map((val: any, index: number) => {
-                  let childMenu = categories?.filter(
-                    (childData: any, index: number) =>
-                      val?.id === childData?.attributes?.menu?.data?.id
-                  );
+              <Dramenu categories={categories} />
+              </div>
+              <div className="">
+                <ul
+                  className={`flex flex-row items-center font-[inter] gap-[32px] font-normal text-[18px] uppercase leading-[14.52px]  ${
+                    fix ? "mt-6" : ""
+                  }`}
+                >
+                  {mainCategory?.map((val: any, index: number) => {
+                    let childMenu = categories?.filter(
+                      (childData: any, index: number) =>
+                        val?.id === childData?.attributes?.menu?.data?.id
+                    );
 
-                  return (
-                    <li
-                      onMouseEnter={() => handleSubmenu(index)}
-                      onMouseLeave={() => setSub(null)}
-                      className="relative "
-                      key={index}
-                    >
-                      {/* main category  */}
-                      <Link
-                        href={`/${val?.attributes?.slug}`}
-                        className={`font-semibold ${
-                          fix ? "text-white" : "text-white"
-                        }  hover:text-[#f5c116] transition-colors duration-150 ease-out relative`}
+                    return (
+                      <li
+                        onMouseEnter={() => handleSubmenu(index)}
+                        onMouseLeave={() => setSub(null)}
+                        className="relative "
+                        key={index}
                       >
-                        {val?.attributes?.title}
-                      </Link>
+                        {/* main category  */}
+                        <Link
+                          href={`/${val?.attributes?.slug}`}
+                          className={`font-semibold ${
+                            fix ? "text-white" : "text-white"
+                          }  hover:text-[#f5c116]  transition-colors duration-150 ease-out relative`}
+                        >
+                          {val?.attributes?.title}
+                        </Link>
 
-                      {sub === index && (
-                        <div className="absolute top-[12px] w-[199px] h-[126px] z-40 space-y-[10px]">
-                          <div className="absolute top-[27px] h-[100%] w-full ">
-                            {childMenu?.map(
-                              (childItem: any, childIndex: number) => {
-                                // let secondchild = categories?.filter(
-                                //   (schild: any) =>
-                                //     childItem.id ===
-                                //     schild?.attributes?.menu?.data?.id
-                                // );
+                        {sub === index && (
+                          <div className="absolute top-[12px] w-[199px] h-[126px] z-40 space-y-[10px]">
+                            <div className="absolute top-[27px] h-[100%] w-full ">
+                              {childMenu?.map(
+                                (childItem: any, childIndex: number) => {
+                                  // let secondchild = categories?.filter(
+                                  //   (schild: any) =>
+                                  //     childItem.id ===
+                                  //     schild?.attributes?.menu?.data?.id
+                                  // );
 
-                                return (
-                                  <li
-                                    className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#1e2250] bg-[#f5c116] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer group "
-                                    key={childIndex}
-                                  >
-                                    {/* sub category */}
-                                    <Link
-                                      href={`/${val?.attributes?.slug}/${childItem?.attributes?.slug}`}
+                                  return (
+                                    <li
+                                      className="text-[14px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#1e2250] bg-[#f5c116] text-white py-[20px] px-[15px] transition-colors duration-300 ease-out font-semibold cursor-pointer group "
+                                      key={childIndex}
                                     >
-                                      {childItem?.attributes?.title}
-                                    </Link>
-                                  </li>
-                                );
-                              }
-                            )}
+                                      {/* sub category */}
+                                      <Link
+                                        href={`/${val?.attributes?.slug}/${childItem?.attributes?.slug}`}
+                                      >
+                                        {childItem?.attributes?.title}
+                                      </Link>
+                                    </li>
+                                  );
+                                }
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      )}
-                    </li>
-                  );
-                })}
-              </ul>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             </div>
           </div>
         </div>

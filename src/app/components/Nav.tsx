@@ -173,7 +173,7 @@ function Nav1({ position, color }: any) {
 
    
         <div className="bg-gradient-to-r from-[#0b0085]">
-        <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto justify-between font-nunito  font-medium items-center hidden  lg:flex lg:flex-row">
+        <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto justify-between font-nunito  font-medium items-start hidden  lg:flex lg:flex-row">
           <div className="w-[137px]    p-2 ">
             <Link href="/">
               {" "}
