@@ -10,6 +10,7 @@ const page: FC<pageProps>  =({params})=> {
   
   return (
     <div>Your param is {params.game}</div>
+    
   )
 }
 
