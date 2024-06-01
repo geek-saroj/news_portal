@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
   const router = useRouter();
   const [breakingNews, setBreakingNews] = useState<any>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 2; // Number of items to display per page
+  const itemsPerPage = 4; // Number of items to display per page
 
   useEffect(() => {
     const fetchData = async () => {

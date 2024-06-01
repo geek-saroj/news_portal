@@ -17,9 +17,15 @@ export default function Home() {
    <Hero/>
    <Midcontainer/>
    <Ministries/>
+   <Featured/>
    <Khelhud/>
    <Pharming/>
    <Grid_helth_poli/>
+   <Featured/>
+   <Khelhud/>
+   <Midcontainer/>
+   <Ministries/>
+
    <Featured/>
    {/* <News/> */}
    {/* <Request/> */}
