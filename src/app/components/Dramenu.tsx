@@ -87,18 +87,18 @@ function Dramenu({ categories }: any) {
       <Drawer placement="right" onClose={onClose} open={open}>
         <ul className="flex flex-col items-start pl-[0px] justify-start gap-[25px] font-[inter] font-normal text-[16px] leading-[14.52px] text-[#000000]">
           <li className="text-start">
-            <Link href="/">HOME</Link>
+            <Link href="/">होम</Link>
           </li>
           <li onClick={handleClick}>
-            <Link href="/about">COMPANY</Link>
+            <Link href="/about">खेलकुद</Link>
             {about && (
               <div className="    w-[199px] pt-[10px] z-40 border-t-[1px] mt-[8px]">
                 <div className="     h-[100%] w-full space-y-[8px]">
                   <li className="text-[15px] border-b-[0.5px] border-b-[white]/[0.5] hover:text-[#0000CC]  transition-colors duration-300 ease-out font-semibold cursor-pointer">
-                    <Link href="/about">About Us</Link>
+                    <Link href="/about">बागमती</Link>
                   </li>
                   <li className="text-[15px]   border-b-[0.5px] border-b-[white]/[0.5]   hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
-                    <Link href="/director">Meet our Director</Link>
+                    <Link href="/director">डिजिटर</Link>
                   </li>
                   <li className="text-[15px]  border-b-[0.5px] border-b-[white]/[0.5]   hover:text-[#0000CC] transition-colors duration-300 ease-out font-semibold whitespace-pre cursor-pointer">
                     <Link href="/team">Our Team</Link>
@@ -111,10 +111,10 @@ function Dramenu({ categories }: any) {
             )}
           </li>
           <li>
-            <Link href="/">NEWS & EVENT</Link>
+            {/* <Link href="/">NEWS & EVENT</Link> */}
           </li>
           <li onClick={handleProduct}>
-            <Link href="/">PRODUCT CATEGORY</Link>
+            {/* <Link href="/">PRODUCT CATEGORY</Link> */}
             {product && (
               <div className="   w-[250px] mt-[10px]  z-40 space-y-[10px]">
                 <div className="bg-white  border-t-[1px] pt-[10px] space-y-[8px]    h-[100%] w-full ">
@@ -318,10 +318,10 @@ function Dramenu({ categories }: any) {
             )}
           </li>
           <li>
-            <Link href="">CAREER</Link>
+            {/* <Link href="">CAREER</Link> */}
           </li>
           <li>
-            <Link href="">CHECK MAIL</Link>
+            {/* <Link href="">CHECK MAIL</Link> */}
           </li>
           <li>
             <Link href="/contact">CONTACT US</Link>
