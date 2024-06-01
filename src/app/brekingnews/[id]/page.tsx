@@ -23,14 +23,14 @@ const page=()=> {
             };
             getCategory();
         }, [id]);
-        console.log("brekingnews is for",brekingnews)
+        // console.log("brekingnews is for",brekingnews)
   
   return (
     <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px] md:px-0">
       <div className="flex flex-col lg:flex-row gap-8  ">
         <div className="basis-[70%]">
           <div className="flex flex-col">
-            <img className="w-full h-auto" src={imageUrl(`${brekingnews?.attributes?.coverimage?.data?.attributes?.url}`)} alt="" />
+            <img className="w-full h-auto" src={(`${brekingnews?.attributes?.coverimage?.data?.attributes?.url}`)} alt="" />
             <h2 className='text-3xl text-black font-bold py-5'>
               {brekingnews?.attributes?.title}
             </h2>

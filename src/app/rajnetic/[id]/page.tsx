@@ -31,7 +31,7 @@ const page = () => {
       <div className="flex flex-col lg:flex-row gap-8  ">
         <div className="basis-[70%]">
           <div className="flex flex-col">
-            <img className="w-full h-auto" src={imageUrl(`${politics?.attributes?.coverimage?.data?.attributes?.url}`)} alt="" />
+            <img className="w-full h-auto" src={(`${politics?.attributes?.coverimage?.data?.attributes?.url}`)} alt="" />
             <h2 className='text-3xl text-black font-bold py-5'>
               {politics?.attributes?.title}
             </h2>

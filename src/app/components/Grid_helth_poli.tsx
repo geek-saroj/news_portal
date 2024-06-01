@@ -50,7 +50,7 @@ function Grid_helth_poli() {
                           {item?.attributes?.title}
                         </h1>
                         <img
-                          src={imageUrl(
+                          src={(
                             item?.attributes?.coverimage?.data?.attributes?.url
                           )}
                           alt=""
@@ -61,7 +61,7 @@ function Grid_helth_poli() {
                       <div>
                         <div className="flex gap-4 items-center pt-3">
                           <img
-                            src={imageUrl(
+                            src={(
                               item?.attributes?.coverimage?.data?.attributes
                                 ?.url
                             )}
@@ -97,7 +97,7 @@ function Grid_helth_poli() {
                           {item?.attributes?.title}
                         </h1>
                         <img
-                          src={imageUrl(
+                          src={(
                             item?.attributes?.coverimage?.data?.attributes?.url
                           )}
                           alt=""
@@ -108,7 +108,7 @@ function Grid_helth_poli() {
                       <div>
                         <div className="flex gap-4 items-center pt-3">
                           <img
-                            src={imageUrl(
+                            src={(
                               item?.attributes?.coverimage?.data?.attributes
                                 ?.url
                             )}
@@ -143,7 +143,7 @@ function Grid_helth_poli() {
                           {item?.attributes?.title}
                         </h1>
                         <img
-                          src={imageUrl(
+                          src={(
                             item?.attributes?.coverimage?.data?.attributes?.url
                           )}
                           alt=""
@@ -154,7 +154,7 @@ function Grid_helth_poli() {
                       <div>
                         <div className="flex gap-4 items-center pt-6">
                           <img
-                            src={imageUrl(
+                            src={(
                               item?.attributes?.coverimage?.data?.attributes
                                 ?.url
                             )}

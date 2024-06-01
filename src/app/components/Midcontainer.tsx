@@ -42,7 +42,7 @@ function Midcontainer() {
                   <div key={item.id} className="flex flex-col ">
                     {/* <span className="ml-2 text-[28px]">{item?.attributes?.number}</span> */}
                     <img
-                      src={imageUrl(
+                      src={(
                         item?.attributes?.coverimage?.data?.attributes?.url
                       )}
                       alt="Your Image"
@@ -61,7 +61,7 @@ function Midcontainer() {
                   <div key={item.id} className="flex gap-1 items-center">
                     {/* <span className="ml-2 text-[28px]">{item?.attributes?.number}</span> */}
                     <img
-                      src={imageUrl(
+                      src={(
                         item?.attributes?.coverimage?.data?.attributes?.url
                       )}
                       alt="Your Image"

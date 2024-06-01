@@ -35,7 +35,7 @@ function Pharming() {
                   {item?.attributes?.title}
                 </h1>
                 <img
-                  src={imageUrl(
+                  src={(
                     item?.attributes?.coverimage?.data?.attributes?.url
                   )}
                   alt=""
@@ -60,7 +60,7 @@ function Pharming() {
                   <div className="basis-[30%]">
                     <div className="flex gap-4 items-center pb-2">
                       <img
-                        src={imageUrl(
+                        src={(
                           item?.attributes?.coverimage?.data?.attributes?.url
                         )}
                         alt=""
@@ -86,7 +86,7 @@ function Pharming() {
                   {item?.attributes?.title}
                 </h1>
                 <img
-                  src={imageUrl(
+                  src={(
                     item?.attributes?.coverimage?.data?.attributes?.url
                   )}
                   alt=""

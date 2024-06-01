@@ -37,7 +37,7 @@ const page=()=> {
         
             <div >
                 <img
-                    src={imageUrl(pradesh?.attributes?.image?.data?.[0].attributes?.url)} 
+                    src={(pradesh?.attributes?.image?.data?.[0].attributes?.url)} 
                     className="w-full h-auto"
                     alt="Image"
                 />
@@ -60,7 +60,7 @@ const page=()=> {
         <div className="p-4 bg-white shadow-lg ">
           <div className="relative">
             <img
-              src={imageUrl(item?.attributes?.images?.data?.[0].attributes?.url)}
+              src={(item?.attributes?.images?.data?.[0].attributes?.url)}
               alt=""
               className="w-100 h-64 object-cover rounded-lg mb-4 transition-transform duration-300 transform hover:scale-110"
             />

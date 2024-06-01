@@ -26,7 +26,7 @@ const FeatureImgae: React.FC = () => {
       {featured.map((item: any, index: any) => (
         <div key={index} className=" w-full md:w-1/2 lg:w-1/4  p-2 overflow-hidden transition-transform duration-300 transform hover:scale-105 ">
           <img
-            src={imageUrl(item?.attributes?.image?.data?.[0].attributes?.url)}
+            src={(item?.attributes?.image?.data?.[0].attributes?.url)}
             alt=""
             className="w-full h-[400px] object-cover "
           />

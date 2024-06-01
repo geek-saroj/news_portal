@@ -44,12 +44,12 @@ function Grid_helth_poli() {
                   {index === 0 ? (
                     <div >
                       <h1 className='text-[18px] w-full h-[40px] font-bold'>{item?.attributes?.title}</h1>
-                      <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className="w-full h-[400px]" />
+                      <img src={(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className="w-full h-[400px]" />
                     </div>
                   ) : (
                     <div>
                       <div className="flex gap-4 items-center pt-3">
-                        <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
+                        <img src={(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
                         <h1>{item?.attributes?.title}</h1>
                       </div>
                     </div>
@@ -75,12 +75,12 @@ function Grid_helth_poli() {
                   {index === 0 ? (
                     <div >
                       <h1 className='text-[18px] w-full h-[40px] font-bold'>{item?.attributes?.title}</h1>
-                      <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className="w-full h-[400px]" />
+                      <img src={(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className="w-full h-[400px]" />
                     </div>
                   ) : (
                     <div>
                       <div className="flex gap-4 items-center pt-6">
-                        <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
+                        <img src={(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
                         <h1>{item?.attributes?.title}</h1>
                       </div>
                     </div>

@@ -41,7 +41,7 @@ function Lokpriya() {
                 <h3 className="ml-2">{item?.attributes?.title}</h3>
               </div>
               <div className="basis-[40%]">        
-                   <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="Your Image" className="w-[70px] h-[70px] rounded-lg" />
+                   <img src={(item?.attributes?.coverimage?.data?.attributes?.url)} alt="Your Image" className="w-[70px] h-[70px] rounded-lg" />
               </div>
 
             </div>

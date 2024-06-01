@@ -52,7 +52,7 @@ function page() {
                       <div className="w-full lg:w-1/2 lg:ml-auto">
                         <div className="w-full h-full overflow-hidden">
                           <img
-                            src={imageUrl(
+                            src={(
                               `${item?.attributes?.coverimage?.data?.attributes?.url}`
                             )}
                             alt="img"

@@ -34,7 +34,7 @@ const NewsBlock = () => {
           >
             <div className="w-[94%] md:w-full ml-[12px] md:ml-[0px] h-[150px] ">
               <img
-                src={imageUrl(
+                src={(
                   `${item?.attributes?.images?.data?.[0].attributes?.url}`
                 )}
                 alt="avatar"

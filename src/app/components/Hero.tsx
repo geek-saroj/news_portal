@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
             </h2>
             <div className="flex items-center justify-center pt-6 mb-[20px] gap-2">
               <img
-                src={imageUrl(
+                src={(
                   `${item?.attributes?.ReporterImage?.data?.[0].attributes?.url}`
                 )}
                 alt=""
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
             </h2>
 
             <img
-              src={imageUrl(
+              src={(
                 `${item?.attributes?.coverimage?.data?.attributes?.url}`
               )}
               alt="img"

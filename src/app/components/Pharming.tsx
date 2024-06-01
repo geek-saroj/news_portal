@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { BaseUrl } from "../api/global";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
@@ -6,89 +6,98 @@ import { imageUrl } from "../utils/imageUrl";
 import Link from "next/link";
 
 function Pharming() {
+  const [pharming, setpharming] = useState<any>(null);
 
-    const [pharming, setpharming] = useState<any>(null);
+  useEffect(() => {
+    let getCategory = async () => {
+      let response = await axios.get(
+        `${BaseUrl}/news?populate=*&filters[isFarmer][$eq]=true&sort[0]=id:desc&pagination[limit]=10 `
+      );
 
-
-
-
-    useEffect(() => {
-        let getCategory = async () => {
-            let response = await axios.get(`${BaseUrl}/news?populate=*&filters[isFarmer][$eq]=true&sort[0]=id:desc&pagination[limit]=10 `);
-
-
-
-
-
-            setpharming(response?.data.data);
-
-
-
-        };
-        getCategory();
-    }, []);
-    return (
-        <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px]  md:px-0">
-             <h1 className="text-[30px] font-bold">कृषि</h1>
-          <div className="w-[150px] h-1 bg-blue-700  items-start"></div>
-            <div className="flex flex-col lg:flex-row gap-6 pt-4">
-               
-                    {/* First news item */}
-                    {pharming && pharming.slice(0, 1).map((item: any, index: number) => (
-                        <div key={item.id} className="basis-1/3 justify-center items-center">
-                            <div className="">
-                                <div className="basis-[70%]">
-                                    <h1 className='text-[24px]'>{item?.attributes?.title}</h1>
-                                    <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" />
-                                </div>
-                                {/* <div className="basis-[30%] pt-3">
+      setpharming(response?.data.data);
+    };
+    getCategory();
+  }, []);
+  return (
+    <div className="max-w-[1127px] 2xl:max-w-[1180px] mx-auto my-10 px-[15px]  md:px-0">
+      <h1 className="text-[30px] font-bold">कृषि</h1>
+      <div className="w-[150px] h-1 bg-blue-700  items-start"></div>
+      <div className="flex flex-col lg:flex-row gap-6 pt-4">
+        {/* First news item */}
+        {pharming &&
+          pharming.slice(0, 1).map((item: any, index: number) => (
+            <div
+              key={item.id}
+              className="basis-1/3 justify-center items-center"
+            >
+              <div className="">
+                <div className="basis-[70%]">
+                  <h1 className="text-[24px]">{item?.attributes?.title}</h1>
+                  <img
+                    src={(
+                      item?.attributes?.coverimage?.data?.attributes?.url
+                    )}
+                    alt=""
+                  />
+                </div>
+                {/* <div className="basis-[30%] pt-3">
                                     <div className="flex gap-4 items-center">
                                         <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
                                         <h1>{item?.attributes?.title}</h1>
                                     </div>
                                 </div> */}
-                            </div>
-                        </div>
-                    ))}
-
-                    {/* Five news items in the middle section */}
-                    <div className="basis-1/3">
-                        {pharming && pharming.slice(1, 5).map((item: any, index: number) => (
-                            <div key={item.id} className="justify-center items-center">
-                                <div className="">
-                                    <div className="basis-[30%]">
-                                        <div className="flex gap-4 items-center pb-2">
-                                            <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
-                                            <h1>{item?.attributes?.title}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Five news items in the right section */}
-                    <div className="basis-1/3">
-                        
-                        {pharming && pharming.slice(5, 9).map((item: any, index: number) => (
-                            <div key={item.id} className="justify-center items-center">
-                                <div className="">
-                                    <div className="basis-[30%]">
-                                        <div className="flex gap-4 items-center pb-2">
-                                            <img src={imageUrl(item?.attributes?.coverimage?.data?.attributes?.url)} alt="" className='w-[80px] h-[60px]' />
-                                            <h1>{item?.attributes?.title}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                        
-                    </div>
-                </div>
-
+              </div>
             </div>
-    
-    );
+          ))}
+
+        {/* Five news items in the middle section */}
+        <div className="basis-1/3">
+          {pharming &&
+            pharming.slice(1, 5).map((item: any, index: number) => (
+              <div key={item.id} className="justify-center items-center">
+                <div className="">
+                  <div className="basis-[30%]">
+                    <div className="flex gap-4 items-center pb-2">
+                      <img
+                        src={(
+                          item?.attributes?.coverimage?.data?.attributes?.url
+                        )}
+                        alt=""
+                        className="w-[80px] h-[60px]"
+                      />
+                      <h1>{item?.attributes?.title}</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+
+        {/* Five news items in the right section */}
+        <div className="basis-1/3">
+          {pharming &&
+            pharming.slice(5, 9).map((item: any, index: number) => (
+              <div key={item.id} className="justify-center items-center">
+                <div className="">
+                  <div className="basis-[30%]">
+                    <div className="flex gap-4 items-center pb-2">
+                      <img
+                        src={(
+                          item?.attributes?.coverimage?.data?.attributes?.url
+                        )}
+                        alt=""
+                        className="w-[80px] h-[60px]"
+                      />
+                      <h1>{item?.attributes?.title}</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Pharming;

@@ -43,7 +43,7 @@ const Card: React.FC = () => {
             <a href="#">
               <img
                 className="rounded-t-lg transition-transform duration-300 transform-gpu hover:scale-105"
-                src={imageUrl(
+                src={(
                   `${item?.attributes?.coverimage?.data?.attributes?.url}`
                 )}
                 alt=""
